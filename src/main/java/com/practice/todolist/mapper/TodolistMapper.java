@@ -1,4 +1,4 @@
-package com.practice.todolist.dao;
+package com.practice.todolist.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 

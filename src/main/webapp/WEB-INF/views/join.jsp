@@ -9,14 +9,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <c:choose>
-        <c:when test="${not empty member.name}">
-            <h1>안녕하세요 ${member.name} 님</h1>
-        </c:when>
-        <c:otherwise>
-            <button><a href="/member/join" >회원가입</a></button>
-            <button><a href="/member/login" >로그인</a></button>
-        </c:otherwise>
-    </c:choose>
+    <h1>회원가입 페이지 입니다.</h1>
+    <form action="/member/register" method="post">
+        <input type="text" placeholder="이름을 입력해주세요" name="name"/>
+        <input type="email" placeholder="이메일을 입력해주세요" name="email"/>
+        <button type="submit">회원가입</button>
+    </form>
 </body>
 </html>
