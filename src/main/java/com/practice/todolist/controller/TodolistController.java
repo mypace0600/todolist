@@ -40,7 +40,7 @@ public class TodolistController {
         return "todoUpdate";
     }
 
-    @PostMapping("/todo/update")
+    @PostMapping("/todo/update/{id}")
     public String updateProc(TodoUpdateDto todoUpdateDto){
         todolistService.update(todoUpdateDto);
         return "redirect:/";

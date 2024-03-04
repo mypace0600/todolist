@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>TODO 리스트 등록 페이지 입니다.</h1>
-<form action="/todo/update" method="post">
+<form action="/todo/update/${todo.id}" method="post">
     <input type="text" placeholder="제목을 입력해주세요" name="title" value="${todo.title}"/>
     <input type="text" placeholder="내용을 입력해주세요" name="detail" value="${todo.detail}"/>
     <select name="done">
