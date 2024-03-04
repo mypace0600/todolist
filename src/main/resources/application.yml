@@ -1,0 +1,23 @@
+
+spring:
+    datatsource:
+        url: jdbc:h2:~/test
+        username: sa
+        password:
+        driverClassName: org.h2.Driver
+        hikari:
+            maximum-pool-size: 4
+    h2:
+        console:
+            enabled: true
+            path: /h2-console
+    mvc:
+        view:
+            prefix: /WEB-INF/views/
+            suffix: .jsp
+
+mybatis:
+    configuration:
+        map-underscore-to-camel-case: true
+    mapper-locations: classpath:/mappers/**/*.xml
+    type-aliases-package: com.practice.todolist.model
