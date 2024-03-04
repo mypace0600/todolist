@@ -10,4 +10,6 @@ public interface MemberMapper {
     void register(MemberDto memberDto);
 
     Member findByEmail(String email);
+
+    Member findById(int memberId);
 }

@@ -19,4 +19,8 @@ public class MemberService {
     public Member findByEmail(String email) {
         return memberMapper.findByEmail(email);
     }
+
+    public Member findById(int memberId) {
+        return memberMapper.findById(memberId);
+    }
 }

@@ -13,4 +13,11 @@
         where email = #{email};
     </select>
 
+    <select id="findById" parameterType="int">
+        select
+            *
+        from member
+        where id = #{id}
+    </select>
+
 </mapper>

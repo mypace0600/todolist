@@ -2,4 +2,50 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.practice.todolist.mapper.TodolistMapper">
 
+    <select id="findAll" parameterType="int" resultType="com.practice.todolist.model.Todolist">
+        select
+            *
+        from todolist
+        where member_id = #{id}
+    </select>
+
+    <select id="findById" parameterType="int" resultType="com.practice.todolist.model.Todolist">
+        select
+            *
+        from todolist
+        where id = #{id}
+    </select>
+
+    <insert id="add" parameterType="com.practice.todolist.dto.TodoAddDto">
+        insert into todolist (
+            title,
+            detail,
+            member_id,
+            done,
+            registerDt,
+            updateDt
+        ) VALUES (
+            #{title},
+            #{detail},
+            #{memberId},
+            false,
+            CURRENT_TIMESTAMP,
+            CURRENT_TIMESTAMP
+        )
+    </insert>
+
+    <update id="update" parameterType="com.practice.todolist.dto.TodoUpdateDto">
+        update todolist
+        set
+            title = #{title},
+            detail = #{detail},
+            done = #{done},
+            updateDt = CURRENT_TIMESTAMP
+        where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete todolist
+        where id = #{id}
+    </delete>
 </mapper>
