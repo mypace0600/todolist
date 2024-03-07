@@ -23,8 +23,8 @@ CREATE TABLE TODOLIST (
     member_id INT NOT NULL,
     done BOOLEAN NOT NULL,
     FOREIGN KEY (member_id) REFERENCES MEMBER(id),
-    registerDt TIMESTAMP NOT NULL,
-    updateDt TIMESTAMP NOT NULL
+    register_dt TIMESTAMP NOT NULL,
+    update_dt TIMESTAMP NOT NULL
 );
 
 숙제
@@ -41,9 +41,6 @@ Spring MVC에서 Model 인터페이스는 다음과 같은 방식으로 동작�
 클라이언트 응답: 뷰 템플릿에서 처리된 데이터를 포함한 HTML 문서가 생성되어 클라이언트에게 응답으로 전송됩니다. 클라이언트는 이 HTML 문서를 받아서 화면에 표시합니다.
 즉, Model 인터페이스는 컨트롤러와 뷰 간의 데이터 전달을 중개하는 역할을 합니다. 컨트롤러에서 데이터를 추가하면, 이 데이터는 자동으로 뷰로 전달되어 화면에 표시됩니다. 이를 통해 개발자는 컨트롤러와 뷰 간의 데이터 전달에 대해 신경 쓰지 않고도 편리하게 데이터를 관리할 수 있습니다.
 
-
-httpsession 정리
-cookie와 session 에 대해서 정리
 http 메서드 정리
 https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-HTTP-%EB%A9%94%EC%84%9C%EB%93%9C-%EC%A2%85%EB%A5%98-%ED%86%B5%EC%8B%A0-%EA%B3%BC%EC%A0%95-%F0%9F%92%AF-%EC%B4%9D%EC%A0%95%EB%A6%AC
 http 상태 정리

@@ -22,8 +22,7 @@ repositories {
 }
 
 dependencies {
-	// JSP API
-	implementation 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:2.3.6'
+
 	// JSTL
 	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
 	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'

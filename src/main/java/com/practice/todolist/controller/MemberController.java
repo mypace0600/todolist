@@ -40,7 +40,7 @@ public class MemberController {
     }
 
     @PostMapping("/member/find")
-    public String findByEmail(String email, Model model, HttpSession session){
+    public String findByEmail(String email, HttpSession session){
         Member member = memberService.findByEmail(email);
         if(null != member.getName()){
             session.setAttribute("memberId",member.getId());
