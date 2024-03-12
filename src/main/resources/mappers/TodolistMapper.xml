@@ -2,11 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.practice.todolist.mapper.TodolistMapper">
 
+    <select id="findAllByMemberIdOrderByDate" parameterType="int" resultType="com.practice.todolist.model.Todolist">
+        SELECT
+            *
+        FROM TODOLIST
+        WHERE member_id = #{id}
+        ORDER BY updateDt
+    </select>
+
     <select id="findAll" parameterType="int" resultType="com.practice.todolist.model.Todolist">
         select
             *
         from todolist
         where member_id = #{id}
+        order by registerDt
     </select>
 
     <select id="findById" parameterType="int" resultType="com.practice.todolist.model.Todolist">

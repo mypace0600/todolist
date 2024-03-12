@@ -34,4 +34,8 @@ public class TodolistService {
     public void delete(int id) {
         todolistMapper.delete(id);
     }
+
+    public List<Todolist> findAllByMemberIdOrderByDate(int id){
+        return todolistMapper.findAllByMemberIdOrderByDate(id);
+    }
 }

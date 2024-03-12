@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-<h1>TODO 리스트 등록 페이지 입니다.</h1>
+<h1>TODO 리스트 수정 페이지 입니다.</h1>
 <form action="/todo/update/${todo.id}" method="post">
     <input type="text" placeholder="제목을 입력해주세요" name="title" value="${todo.title}"/>
     <input type="text" placeholder="내용을 입력해주세요" name="detail" value="${todo.detail}"/>

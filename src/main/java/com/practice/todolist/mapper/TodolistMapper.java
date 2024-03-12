@@ -19,4 +19,6 @@ public interface TodolistMapper {
     void update(TodoUpdateDto todoUpdateDto);
 
     void delete(int id);
+
+    List<Todolist> findAllByMemberIdOrderByDate(int id);
 }
