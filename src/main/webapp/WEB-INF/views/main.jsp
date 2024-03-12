@@ -29,6 +29,15 @@
         <button><a href="/todo/register/${member.id}">추가</a></button>
         <c:if test="${not empty todolist}">
             <table class="table">
+                <colgroup>
+                    <col style="width:15%;">
+                    <col style="width:35%;">
+                    <col style="width:5%;">
+                    <col style="width:15%;">
+                    <col style="width:15%;">
+                    <col style="width:7.5%;">
+                    <col style="width:7.5%;">
+                </colgroup>
                 <thead>
                 <tr>
                     <th>제목</th>
