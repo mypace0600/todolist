@@ -76,7 +76,9 @@
     $(document).ready(function (){
         $(".delete-btn").click(function (){
             let id = $(this).data("id");
-
+            if(!confirm('삭제하시면 복구할수 없습니다. \n 정말로 삭제하시겠습니까??')){
+                return false;
+            }
             $.ajax({
                 url: "/todo/delete/"+id,
                 type: "get",
