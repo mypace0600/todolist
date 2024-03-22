@@ -7,20 +7,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script>
-        window.onload = function() {
-            <% if(Boolean.TRUE.equals(request.getAttribute("emailExists"))) { %>
-            alert('이미 등록된 이메일입니다.');
-            <% } %>
-        }
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <h1>회원가입 페이지 입니다.</h1>
-    <form action="/member/register" method="post">
-        <input type="text" placeholder="이름을 입력해주세요" name="name"/>
-        <input type="email" placeholder="이메일을 입력해주세요" name="email"/>
-        <button type="submit">회원가입</button>
+    <form>
+        <input type="text" placeholder="이름을 입력해주세요" name="name" id="name"/>
+        <input type="email" placeholder="이메일을 입력해주세요" name="email" id="email"/>
+        <button type="button" id="joinBtn">회원가입</button>
     </form>
 </body>
+<script>
+    $("#joinBtn").on("click",function(){
+        let data = {
+            name : $("#name").val(),
+            email : $("#email").val()
+        };
+
+        $.ajax({
+            url:"/member/register",
+            type:"post",
+            contentType:"application/json",
+            data: JSON.stringify(data),
+            success:function(response){
+                if(response.checkEmail==true){
+                    alert("이미 사용중인 이메일입니다.");
+                } else {
+                    location.href="/";
+                }
+            }
+        })
+    })
+</script>
 </html>

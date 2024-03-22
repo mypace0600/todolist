@@ -7,13 +7,18 @@ import com.practice.todolist.service.MemberService;
 import com.practice.todolist.service.TodolistService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -27,16 +32,15 @@ public class MemberController {
     }
 
     @PostMapping("/member/register")
-    public String register(MemberDto memberDto, Model model){
+    public ResponseEntity<Map<String, Boolean>> register(@RequestBody MemberDto memberDto){
         Boolean checkEmail = memberService.checkEmail(memberDto.getEmail());
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("checkEmail", checkEmail);
+
         if(!checkEmail) {
             memberService.register(memberDto);
-            return "redirect:/";
-        } else {
-            model.addAttribute("emailExists",true);
-            return "join";
         }
-
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/member/login")
