@@ -23,4 +23,13 @@ public class MemberService {
     public Member findById(int memberId) {
         return memberMapper.findById(memberId);
     }
+
+    public Boolean checkEmail(String email) {
+        Member member = memberMapper.findByEmail(email);
+        if(null != member){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

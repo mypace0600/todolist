@@ -7,6 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script>
+        window.onload = function() {
+            <% if(Boolean.TRUE.equals(request.getAttribute("emailExists"))) { %>
+            alert('이미 등록된 이메일입니다.');
+            <% } %>
+        }
+    </script>
 </head>
 <body>
     <h1>회원가입 페이지 입니다.</h1>

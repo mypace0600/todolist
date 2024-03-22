@@ -21,8 +21,6 @@ public class MemberController {
 
     private final MemberService memberService;
 
-    private final TodolistService todolistService;
-
     @GetMapping("/member/join")
     public String join(){
         return "join";
@@ -30,8 +28,15 @@ public class MemberController {
 
     @PostMapping("/member/register")
     public String register(MemberDto memberDto, Model model){
-        memberService.register(memberDto);
-        return "redirect:/";
+        Boolean checkEmail = memberService.checkEmail(memberDto.getEmail());
+        if(!checkEmail) {
+            memberService.register(memberDto);
+            return "redirect:/";
+        } else {
+            model.addAttribute("emailExists",true);
+            return "join";
+        }
+
     }
 
     @GetMapping("/member/login")
