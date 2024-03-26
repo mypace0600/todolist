@@ -7,9 +7,9 @@
 - Ajax를 통한 클라이언트와 서버간 통신 이해
 
 ## 🙋‍♀️ 사용 기술 
-서버) Java 17, SpringBoot 3.1.9, Mybatis 3.0,.3, H2 Database
+- 서버) Java 17, SpringBoot 3.1.9, Mybatis 3.0,.3, H2 Database
 
-클라이언트) JSP, JSTL, JQuery, Bootstrap
+- 클라이언트) JSP, JSTL, JQuery, Bootstrap
 
 ## 🛠 기능 목록   
 1. 회원
