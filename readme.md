@@ -46,6 +46,7 @@ create table todolist(
   foreign key (member_id) references member(id)
 );
 ```
+- github 다운 후 로컬에서 빌드하면 됩니다.
 
 ## 📍 정리내용
 1. spring mvc 데이터 흐름
